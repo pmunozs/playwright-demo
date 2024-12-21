@@ -26,6 +26,7 @@ This is a sample automation project using
 1. Clone the repo: `git clone git@github.com:pmunozs/playwright-demo.git`
 2. Navigate to project folder and install npm packages: `npm install`
 3. Install required browsers: `npx playwright install`
+4. Install Playwright's dependencies: `npx playwright install-deps`
 
 ## Usage
 ### Execute
