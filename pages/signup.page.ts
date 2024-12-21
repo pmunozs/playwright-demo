@@ -70,7 +70,6 @@ export class SignUpPage {
 
     async goto() {
         await this.page.goto('signup');
-        await this.page.locator('.fc-cta-consent').click();
     }
 
     async new_user_signup(user: User): Promise<void> {
