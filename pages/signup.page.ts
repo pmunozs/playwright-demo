@@ -72,13 +72,13 @@ export class SignUpPage {
         await this.page.goto('signup');
     }
 
-    async new_user_signup(user: User): Promise<void> {
+    async newUserSignUp(user: User): Promise<void> {
         await this.signUpNameField.fill(user.name);
         await this.signUpEmailField.fill(user.email);
         await this.signUpButton.click();
     }
 
-    async account_information(user: User): Promise<void> {
+    async accountInformation(user: User): Promise<void> {
         await this.mrsTitleCheckbox.click();
         await this.passwordField.fill(user.password);
         await this.daySelect.selectOption(user.day);
@@ -88,7 +88,7 @@ export class SignUpPage {
         user.offers &&  await this.offersCheckbox.click();
     }
 
-    async address_information(user: User): Promise<void> {
+    async addressInformation(user: User): Promise<void> {
         await this.firstnameField.fill(user.firstname);
         await this.lastnameField.fill(user.lastname);
         await this.companyField.fill(user.company);

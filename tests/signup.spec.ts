@@ -18,20 +18,16 @@ test.describe('signup', () => {
     test('user can signup', async ({ page }) => {
         const newUser = User.createNewUser();
 
-        await signUpPage.new_user_signup(newUser);
+        await signUpPage.newUserSignUp(newUser);
     
         await expect(page).toHaveURL('signup');
         await expect(page.locator('.login-form')).toBeVisible();
         await expect(signUpPage.nameField).toHaveValue(newUser.name);
         await expect(signUpPage.emailField).toHaveValue(newUser.email);
 
-        // Account information
-        await signUpPage.account_information(newUser);
+        await signUpPage.accountInformation(newUser);
+        await signUpPage.addressInformation(newUser);
 
-        // Address information
-        await signUpPage.address_information(newUser);
-
-        // Redirection
         await expect(page).toHaveURL('account_created');
         await expect(page.getByTestId('account-created')).toBeVisible();
 
